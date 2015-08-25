@@ -1,0 +1,10 @@
+
+"#loginButton" : {
+    left: 5,
+    title: "Login"
+}
+
+
+"#webView" : {
+    url: 'http://www.movistar.cl/PortalMovistarWeb/appmanager/PortalMovistar/portal?_nfpb=true&_pageLabel=P1000190501270682270315'
+}

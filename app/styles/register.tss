@@ -1,0 +1,5 @@
+
+"#registerButton" : {
+    left: 5,
+    title: "Registrar"
+}

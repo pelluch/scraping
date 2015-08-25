@@ -1,0 +1,22 @@
+<Alloy>
+    <Window exitOnClose="false" >
+        <ScrollView layout="vertical">
+            <View layout="horizontal" height="Ti.UI.SIZE">
+                <Label class="fieldLabel" text="RUT: " />
+                <TextField id="rut" />
+            </View>
+            <View layout="horizontal" height="Ti.UI.SIZE">
+                <Label class="fieldLabel" text="Identificador: " />
+                <TextField id="identifier" />
+            </View>
+            <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
+                <Button id="registerButton" onClick="register" />
+            </View>
+            <Label id="header" />
+            <View layout="horizontal" id="messageContainer">
+                <Label id="message" />
+                <Label id="messageDetail" />
+            </View>
+        </ScrollView>
+    </Window>
+</Alloy>

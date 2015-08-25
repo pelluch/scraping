@@ -24,3 +24,42 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+
+"Window" : {
+    backgroundColor: 'white'
+}
+
+".password" : {
+    passwordMask: true
+}
+
+"TextField" : {
+    color: 'black',
+    width: "60%",
+    left: 5
+}
+
+".fieldLabel" : {
+    width: "20%",
+    left: 5,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+    top: 8
+}
+
+"Label" : {
+    width: "90%",
+    height: Ti.UI.SIZE,
+    color: 'black',
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#messageContainer" : {
+    height: Ti.UI.SIZE,
+    width: Ti.UI.FILL
+}
+
+"#messageDetail" : {
+    font: {
+        fontWeight: 'bold'
+    }
+}

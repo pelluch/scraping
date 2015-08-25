@@ -1,20 +1,7 @@
 <Alloy>
-	<Window class="container" layout="vertical">
-        <View layout="horizontal" height="Ti.UI.SIZE">
-            <Label class="fieldLabel" text="RUT: " />
-            <TextField id="rut" />
-        </View>
-        <View layout="horizontal" height="Ti.UI.SIZE">
-            <Label class="fieldLabel" text="Código: " />
-            <TextField id="captcha" />
-        </View>
-        <Button id="sendButton" onClick="send" />
-        <ImageView id="captchaImg" />
-        <Label id="header" />
-        <View layout="horizontal" id="messageContainer">
-            <Label id="message" />
-            <Label id="messageDetail" />
-        </View>
-        <WebView id="webView" onLoad="onLoad"  />
+	<Window layout="vertical" >
+        <Button title="Reset Password" onClick="resetPassword" />
+        <Button title="Login" onClick="login" />
+        <Button title="Register" onClick="register" />
     </Window>
 </Alloy>

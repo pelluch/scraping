@@ -15,3 +15,5 @@ var scraper = require('scraper');
 
 var select = require('soupselect').select;
 var htmlparser = require("htmlparser");
+var App = {};
+App.Utils = require('utils');
