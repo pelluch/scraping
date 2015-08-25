@@ -3,11 +3,18 @@
 }
 
 
-"#captcha" : {
+"TextField" : {
     color: 'black',
-    width: "50%"
+    width: Ti.UI.FILL,
+    left: 5
 }
 
+".fieldLabel" : {
+    width: "30%",
+    left: 15,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+    top: 8
+}
 
 "#sendButton" : {
     title: "Send"
@@ -34,4 +41,10 @@
 "#messageContainer" : {
     height: Ti.UI.SIZE,
     width: Ti.UI.FILL
+}
+
+"#messageDetail" : {
+    font: {
+        fontWeight: 'bold'
+    }
 }

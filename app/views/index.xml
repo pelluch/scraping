@@ -1,6 +1,13 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<TextField id="captcha" />
+        <View layout="horizontal" height="Ti.UI.SIZE">
+            <Label class="fieldLabel" text="RUT: " />
+            <TextField id="rut" />
+        </View>
+        <View layout="horizontal" height="Ti.UI.SIZE">
+            <Label class="fieldLabel" text="Código: " />
+            <TextField id="captcha" />
+        </View>
         <Button id="sendButton" onClick="send" />
         <ImageView id="captchaImg" />
         <Label id="header" />

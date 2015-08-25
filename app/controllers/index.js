@@ -5,7 +5,7 @@ function send(e) {
     var call = '$.ajax({' +
     'url: \'https://sucursalvirtual.movistar.cl/login/solicitarClaveLogin\',' +
     'type: \'POST\',' +
-    'data: { idRut: \'17.085.953-7\', recaptcha_response_field: \'' + $.captcha.getValue() + '\' },' +
+    'data: { idRut: \'' + $.rut.getValue() + '\', recaptcha_response_field: \'' + $.captcha.getValue() + '\' },' +
     'success: function(a) {  },' +
     'async: false' +
     '}).responseText'
@@ -21,8 +21,16 @@ function send(e) {
             Ti.API.info("Error: " + error);
         }
         else {
+            Ti.API.info("Success");
             var forms = select(dom, 'form');
-            header = select(dom, '#mensajeError #encabezadoError')[0].children[0].raw.trim();
+            headers = select(dom, '#mensajeError #encabezadoError');
+            Ti.API.info(JSON.stringify(headers));
+            header = headers[0].children[0].raw.trim();
+            if(header === '') {
+                header = 'Para continuar. Por favor ingresa tu RUT.';
+            }
+            Ti.API.info(header);
+
             var messageContainer = select(dom, '#mensajeError #detalleError')[0];
 
             if(forms.length > 0) {
