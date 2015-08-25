@@ -14,12 +14,13 @@ function login(e) {
 
 function onLoad(e) {
     Ti.API.info("onLoad");
-    this.evalJS('login()');
-    var regex = new RegExp("input_personas_rut");
+    var regex = new RegExp("input_rut");
     var html = this.getHtml();
     if(regex.test(html)) {
+        Ti.API.info('Has');
         alert('Has input');
     } else {
+        Ti.API.info('Has not');
         alert('Does not have input =(');
     }
 }
