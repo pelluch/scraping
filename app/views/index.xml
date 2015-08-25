@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<TextField id="captcha" />
+        <Button id="sendButton" onClick="send" />
+        <ImageView id="captchaImg" />
+        <Label id="message" />
+        <WebView id="webView" onLoad="onLoad"  />
+	</Window>
+</Alloy>

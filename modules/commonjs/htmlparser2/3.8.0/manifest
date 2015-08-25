@@ -1,0 +1,10 @@
+version: 3.8.0
+description:
+author: Pier Paolo Ramon <pierpaolo.ramon@smc.it> (https://github.com/yuchi)
+license: LGPL-2.1
+copyright: Copyright © 2014 Pier Paolo Ramon
+name: ti-htmlparser2
+moduleid: ti-htmlparser2
+guid: f5d3265a-8d1d-7eee-72c6-97faa3c0675e
+platform: commonjs
+minsdk: 3.2.0.GA
