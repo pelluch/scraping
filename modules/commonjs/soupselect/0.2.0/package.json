@@ -1,0 +1,45 @@
+{
+  "name": "soupselect",
+  "version": "0.2.0",
+  "engines": {
+    "node": ">=0.2.0"
+  },
+  "titaniumManifest": {
+    "guid": "33b5f330-839a-d728-c2d9-3f3623caa72a"
+  },
+  "author": {
+    "name": "Harry Fuecks",
+    "email": "hfuecks@gmail.com",
+    "url": "http://twitter.com/hfuecks"
+  },
+  "url": "http://github.com/harryf/node-soupselect",
+  "dependencies": {
+    "htmlparser": ">= 1.6.2",
+    "nodeunit": ">= 0.3.0"
+  },
+  "repository": [
+    {
+      "type": "git",
+      "url": "git://github.com/harryf/node-soupselect.git"
+    }
+  ],
+  "main": "soupselect.js",
+  "license": "MIT",
+  "description": "Adds CSS selector support to htmlparser for scraping activities - port of soupselect (python)",
+  "devDependencies": {},
+  "_id": "soupselect@0.2.0",
+  "_engineSupported": true,
+  "_npmVersion": "1.0.1rcFINAL",
+  "_nodeVersion": "v0.4.8-pre",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "ff7fe20305b68a39e88b8b88a3c6057bb0e3524f",
+    "tarball": "http://registry.npmjs.org/soupselect/-/soupselect-0.2.0.tgz"
+  },
+  "scripts": {},
+  "directories": {},
+  "_shasum": "ff7fe20305b68a39e88b8b88a3c6057bb0e3524f",
+  "_resolved": "https://registry.npmjs.org/soupselect/-/soupselect-0.2.0.tgz",
+  "_from": "soupselect@*",
+  "_nativeDependencies": {}
+}

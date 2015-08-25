@@ -24,8 +24,14 @@
     width: "35%"
 }
 
-"#message" : {
-    width: Ti.UI.SIZE,
+"Label" : {
+    width: "90%",
     height: Ti.UI.SIZE,
-    color: 'black'
+    color: 'black',
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#messageContainer" : {
+    height: Ti.UI.SIZE,
+    width: Ti.UI.FILL
 }

@@ -1,0 +1,10 @@
+version: 0.2.0
+description: Adds CSS selector support to htmlparser for scraping activities - port of soupselect (python)
+author: Harry Fuecks <hfuecks@gmail.com> (http://twitter.com/hfuecks)
+license: MIT
+copyright: Copyright © 2015 Harry Fuecks
+name: soupselect
+moduleid: soupselect
+guid: 33b5f330-839a-d728-c2d9-3f3623caa72a
+platform: commonjs
+minsdk: 3.2.0.GA

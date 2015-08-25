@@ -11,5 +11,7 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 var scraper = require('scraper');
-var htmlparser = require("htmlparser2");
+// var htmlparser = require("htmlparser2");
 
+var select = require('soupselect').select;
+var htmlparser = require("htmlparser");

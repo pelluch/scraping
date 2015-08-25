@@ -1,0 +1,10 @@
+version: 1.7.7
+description: Forgiving HTML/XML/RSS Parser in JS for *both* Node and Browsers
+author: Chris Winberry <chris@winberry.net>
+license: MIT
+copyright: Copyright © 2015 Chris Winberry
+name: htmlparser
+moduleid: htmlparser
+guid: 95e98858-3b24-8aa8-3225-69ae5ae92ec0
+platform: commonjs
+minsdk: 3.2.0.GA
