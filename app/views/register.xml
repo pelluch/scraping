@@ -3,11 +3,11 @@
         <ScrollView layout="vertical">
             <View layout="horizontal" height="Ti.UI.SIZE">
                 <Label class="fieldLabel" text="RUT: " />
-                <TextField id="rut" />
+                <TextField id="rut" class="shortField" />
             </View>
             <View layout="horizontal" height="Ti.UI.SIZE">
                 <Label class="fieldLabel" text="Identificador: " />
-                <TextField id="identifier" />
+                <TextField id="identifier" class="shortField" />
             </View>
             <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
                 <Button id="registerButton" onClick="register" />
@@ -17,6 +17,7 @@
                 <Label id="message" />
                 <Label id="messageDetail" />
             </View>
+            <WebView id="webView" />
         </ScrollView>
     </Window>
 </Alloy>

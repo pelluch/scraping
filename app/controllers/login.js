@@ -3,18 +3,48 @@ function login(e) {
     var rut = App.Utils.formatRut($.rut.getValue());
     $.rut.setValue(rut);    
     var password = $.password.getValue();
-    var result = $.webView.evalJS(App.Utils.getFunctionString(validate, {
-        rut: rut,
-        password: password,
-        e: 'persona_rut',
-        t: 'input_rut',
-        n: 'input_pass',
-        r: 'form_persona'
-    }));
+    var result = $.webView.evalJS(App.Utils.getFunctionString(validate, [
+        rut,
+        password,
+        'persona_rut',
+        'input_rut',
+        'input_pass',
+        'form_persona'
+    ]));
     if(result === 'true') {
+        Ti.API.info('true');
         $.webView.evalJS(App.Utils.getFunctionString(submitForm));
+    } else {
+        var rutError = "", passwordError = "";
+        rutError = $.webView.evalJS(App.Utils.getFunctionString(function() {
+            if($('#error_login_rut_pers').css('display') !== 'none')
+                return $('#txt_mensaje_rut_pers').text().trim();
+            else 
+                return "";
+        }));
+        $.rutError.setText(rutError);
+
+        var passwordError = $.webView.evalJS(App.Utils.getFunctionString(function() {
+            if($('#error_login_pass_pers').css('display') !== 'none')
+                return $('#txt_mensaje_pass_pers').text().trim();
+            else
+                return "";
+        }));
+        $.passwordError.setText(passwordError);
+        if(rutError === "") {
+            $.rutError.setHeight(0);
+        } else {
+            $.rutError.setHeight(Ti.UI.SIZE);
+        }
+
+        if(passwordError === "") {
+            Ti.API.info('No pass error');
+            $.passwordError.setHeight(0);
+        } else {
+            Ti.API.info('Pass error is ' + passwordError);
+            $.passwordError.setHeight(Ti.UI.SIZE);
+        }
     }
-    Ti.API.info(result);
 }
 
 function onLoad(e) {
@@ -41,6 +71,7 @@ function validate(rut, password, e, t, n, r) {
     $('#input_rut').val(rut);
     $('#input_rut').blur();
     $('#input_pass').val(password);
+    $('#input_pass').blur();
 
     $("#error_login_rut_pers").hide();
     $("#error_login_pass_pers").hide();

@@ -6,5 +6,9 @@
 
 
 "#webView" : {
-    url: 'https://sucursalvirtual.movistar.cl/login/login?tab=1111'
+    url: 'https://sucursalvirtual.movistar.cl/login/login?tab=1111',
+    visible: false,
+    height: 0,
+    width: 0
 }
+

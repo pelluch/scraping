@@ -52,10 +52,10 @@ function validateFields() {
     $.rut.setValue(rut);
     var captcha = $.captcha.getValue().trim();
     $.captcha.setValue(captcha);
-    var funcStr = App.Utils.getFunctionString(setWebviewValues, {
-        rut: rut,
-        captcha: captcha
-    });
+    var funcStr = App.Utils.getFunctionString(setWebviewValues, [
+        rut,
+        captcha
+    ]);
     var valid = $.webView.evalJS(funcStr);
     return valid !== 'false';
 }

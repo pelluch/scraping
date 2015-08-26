@@ -25,12 +25,12 @@ exports.getFunctionString = function(func, params) {
     var funcStr = '(' + func + ')(';
     var paramStr = '';
     var delimiter = '';
-    params = params || {};
-    for(var key in params) { 
-        paramStr = paramStr + delimiter + JSON.stringify(params[key]); 
+    params = params || [];
+    _.each(params, function(param) {
+        paramStr = paramStr + delimiter + JSON.stringify(param);
         delimiter = ','; 
-    }
-    paramStr = paramStr + ');';
-    funcStr = funcStr + paramStr;
+    });
+    paramStr += ');'
+    funcStr += paramStr;
     return funcStr;
 };

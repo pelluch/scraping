@@ -3,3 +3,8 @@
     left: 5,
     title: "Registrar"
 }
+
+
+"#webView" : {
+    url: 'https://sucursalvirtual.movistar.cl/login/registrarse'
+}

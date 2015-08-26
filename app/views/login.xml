@@ -3,11 +3,17 @@
         <ScrollView layout="vertical">
             <View layout="horizontal" height="Ti.UI.SIZE">
                 <Label class="fieldLabel" text="RUT: " />
-                <TextField id="rut" />
+                <View class="fieldContainer" layout="vertical">
+                    <TextField id="rut" />
+                    <Label id="rutError" class="fieldError" />
+                </View>
             </View>
             <View layout="horizontal" height="Ti.UI.SIZE">
                 <Label class="fieldLabel" text="Clave: " />
-                <TextField id="password" class="password" />
+                <View class="fieldContainer" layout="vertical">
+                    <TextField id="password" class="password" />
+                    <Label id="passwordError" class="fieldError" />
+                </View>
             </View>
             <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
                 <Button id="loginButton" onClick="login" />
