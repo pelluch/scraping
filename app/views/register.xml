@@ -1,23 +1,72 @@
 <Alloy>
     <Window exitOnClose="false" >
-        <ScrollView layout="vertical">
-            <View layout="horizontal" height="Ti.UI.SIZE">
-                <Label class="fieldLabel" text="RUT: " />
-                <TextField id="rut" class="shortField" />
-            </View>
-            <View layout="horizontal" height="Ti.UI.SIZE">
-                <Label class="fieldLabel" text="Identificador: " />
-                <TextField id="identifier" class="shortField" />
-            </View>
-            <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
-                <Button id="registerButton" onClick="register" />
-            </View>
-            <Label id="header" />
-            <View layout="horizontal" id="messageContainer">
-                <Label id="message" />
-                <Label id="messageDetail" />
-            </View>
-            <WebView id="webView" onLoad="onLoad" />
-        </ScrollView>
+        <ScrollableView>
+            <ScrollView layout="vertical">
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="RUT: " />
+                    <TextField id="rut" class="shortField" />
+                </View>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Identificador: " />
+                    <TextField id="identifier" class="shortField" />
+                </View>
+                <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
+                    <Button id="registerButton" onClick="register" />
+                </View>
+                <Label id="header" />
+                <View layout="horizontal" id="messageContainer">
+                    <Label id="message" />
+                    <Label id="messageDetail" />
+                </View>
+                <WebView id="webView" onLoad="onLoad" />
+            </ScrollView>
+            <ScrollView layout="vertical">
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Correo: " />
+                    <TextField id="email" class="shortField" />
+                </View>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Confirmar correo: " />
+                    <TextField id="emailConfirmation" class="shortField" />
+                </View>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Teléfono móvil: " />
+                    <TextField id="phone" class="shortField" />
+                </View>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Reingresar móvil: " />
+                    <TextField id="phoneConfirmation" class="shortField" />
+                </View>
+                <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
+                    <Button id="emailButton" onClick="sendEmail" />
+                </View>
+            </ScrollView>
+            <ScrollView layout="vertical">
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Clave Temporal: " />
+                    <View class="fieldContainer">
+                        <TextField id="tempPassword" class="password" />
+                        <Label class="fieldError" />
+                    </View>
+                </View>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Clave: " />
+                    <View class="fieldContainer">
+                        <TextField id="password" class="password" />
+                        <Label class="fieldError" />
+                    </View>
+                </View>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <Label class="fieldLabel" text="Confirmar clave: " />
+                    <View class="fieldContainer">
+                        <TextField id="passwordConfirmation" class="password" />
+                        <Label class="fieldError" />
+                    </View>
+                </View>
+                <View height="Ti.UI.SIZE" width="Ti.UI.FILL" layout="horizontal">
+                    <Button id="setPasswordButton" onClick="setPassword" />
+                </View>
+            </ScrollView>
+        </ScrollableView>
     </Window>
 </Alloy>

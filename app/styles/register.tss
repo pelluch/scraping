@@ -4,7 +4,16 @@
     title: "Registrar"
 }
 
+"#emailButton" : {
+    left: 5,
+    title: "Registrar"
+}
 
 "#webView" : {
     url: 'https://sucursalvirtual.movistar.cl/login/registrarse'
+}
+
+"#setPasswordButton" : {
+    left: 5,
+    title: "Crear clave"
 }
