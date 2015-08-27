@@ -17,7 +17,7 @@
                 <Label id="message" />
                 <Label id="messageDetail" />
             </View>
-            <WebView id="webView" />
+            <WebView id="webView" onLoad="onLoad" />
         </ScrollView>
     </Window>
 </Alloy>

@@ -1,5 +1,13 @@
+var setPasswordCreated = false;
+var setPasswordController = null;
 
 function login(e) {
+
+    if(setPasswordCreated) {
+        setPasswordController.getView().open();
+        return;
+    }
+    
     var rut = App.Utils.formatRut($.rut.getValue());
     $.rut.setValue(rut);    
     var password = $.password.getValue();
@@ -10,7 +18,7 @@ function login(e) {
         'input_rut',
         'input_pass',
         'form_persona'
-    ]));
+        ]));
     if(result === 'true') {
         Ti.API.info('true');
         $.webView.evalJS(App.Utils.getFunctionString(submitForm));
@@ -47,6 +55,9 @@ function login(e) {
     }
 }
 
+
+
+
 function onLoad(e) {
     Ti.API.info("onLoad");
     var regex = new RegExp("input_rut");
@@ -54,9 +65,14 @@ function onLoad(e) {
     if(regex.test(html)) {
         Ti.API.info('Has');
     } else {
-        Alloy.createController('set_password', {
-            webView: $.webView
-        }).getView().open();
+        if(!setPasswordCreated) {
+            setPasswordCreated = true;            
+            setPasswordController = Alloy.createController('set_password', {
+                webView: $.webView
+            });  
+            setPasswordController.getView().open();          
+        }
+
     }
 }
 

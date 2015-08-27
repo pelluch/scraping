@@ -8,7 +8,11 @@ function send(e) {
     }
 }
 
-
+/*  Extrae los errores del webview y los muestra a modo de prueba 
+    Los errores tienen que ser al igual que en el login actual, es decir
+    no que aparezcan como textos al lado de los formularios
+    pero que aparezca el signo de exclamación rojo por ejemplo y el toast
+    en android especificando el error en caso de */
 function showErrors() {
     var rawHtml = $.webView.getHtml();
     var message = "";
@@ -39,7 +43,11 @@ function showErrors() {
 }
 
 
-
+/*  Manda los valores en los forms nativos al HTML del webview
+    El blur es importante porque si no no registra un cambio en el 
+    campo del RUT
+    la función recupera_clave retorna false si la validación falla,
+    en caso contrario envía el formulario del webview */
 function setWebviewValues(rut, captcha) {
     $('#idRut').val(rut);
     $('#idRut').blur();
@@ -47,6 +55,10 @@ function setWebviewValues(rut, captcha) {
     return recuperar_clave('idRut', 'recaptcha_response_field');
 }
 
+/*  Inyecta y llama a la función anterior usando los valores que el usuario ingresó
+    El resultado puede ser false (validación falla) u otro (se mandó el formulario del webview)
+    En este último caso, puede que la validación client-side falle pero igual hayan errores
+    server-side (captcha ingresado no es el correcto, rut no registrado, etc) */
 function validateFields() {
     var rut = App.Utils.formatRut($.rut.getValue());
     $.rut.setValue(rut);
@@ -60,6 +72,12 @@ function validateFields() {
     return valid !== 'false';
 }
 
+
+/*  Esta función se inyecta en el webview
+    Obtiene información de la imagen como un string codificado en base 64
+    Ejemplo de retorno:
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAABBCAYAAAB4ko6YAAANbklEQ…mcREWsxwMUaOupK2opgQco0AROoiLW4wEKtPXUFbWUwAN/A9D1DKcw4nkcAAAAAElFTkSuQmCC"
+    Lo que viene después del 'base64,' vendría siendo la imagen codificada */
 function getImageData() {
     img = document.getElementById('imagen_captcha');
     canvas = document.createElement('canvas');
@@ -71,8 +89,7 @@ function getImageData() {
     return data;
 }
 
-
-
+/* Obtiene imagen codificada del captcha y lo muestra en un ImageView de titanium */
 function loadCaptcha() {
     $.captcha.setValue('');
     var funcStr = App.Utils.getFunctionString(getImageData);
@@ -85,11 +102,16 @@ function loadCaptcha() {
     $.captchaImg.setImage(blob);
 }
 
+/* Llama función del webview para cargar nuevo captcha */
 function reloadCaptcha(e) {
     $.webView.evalJS('cambiarCaptcha();');
     loadCaptcha();
 }
 
+/*  Se llama cada vez que se carga una página en el webview
+    Inicialmente es la página de recupera tu clave,
+    al mandar la info del RUT y captcha puede volver a la misma página
+    (en caso de error) o bien mostrar la pantalla de éxito */
 function onLoad(e) {
     Ti.API.info('Load ' + e.url);
     var html = this.getHtml();
@@ -102,6 +124,12 @@ function onLoad(e) {
     }
 }
 
+/*  Función que se llama cuando se pudo resetear la clave correctamente
+    Lo que hace es extraer los mensajes de éxito del webview, no es necesario 
+    que ocupes esto (porque hay librerías de parseo HTML entre medio),
+    pero lo relevante es obtener la parte que dice algo como
+    Correo electrónico: pab*****@gmail.com para que el usuario sepa dónde se le envío
+    Para eso se puede aplicar una simple expresión regular o algo así */
 function onSuccess() {
     var rawHtml = $.webView.getHtml();
     var message = "";
